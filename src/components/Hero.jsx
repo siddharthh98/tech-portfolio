@@ -35,7 +35,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
+        <section id="about" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
             <div className="container hero-container">
                 <div style={{ flex: 1, width: '100%' }}>
                     <motion.span
@@ -59,27 +59,8 @@ const Hero = () => {
                         Designing and delivering innovative solutions, from the core runtime engine for the <strong>Multimodal Workstream</strong> to the proprietary <strong>OBO Connector</strong>. Passionate about enhancing security, user experience, and advancing technology at scale.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <a href="#projects" style={{
-                            background: 'linear-gradient(45deg, #00fff2, #bd34fe)',
-                            padding: '0.8rem 1.8rem',
-                            borderRadius: '50px',
-                            color: '#000',
-                            fontWeight: 'bold',
-                            border: 'none',
-                            textAlign: 'center',
-                            flex: 1,
-                            minWidth: '140px'
-                        }}>View Work</a>
-                        <a href="#contact" style={{
-                            background: 'rgba(255,255,255,0.1)',
-                            padding: '0.8rem 1.8rem',
-                            borderRadius: '50px',
-                            backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            textAlign: 'center',
-                            flex: 1,
-                            minWidth: '140px'
-                        }}>Contact Me</a>
+                        <a href="#projects" className="hero-btn-primary">View Work</a>
+                        <a href="#contact" className="hero-btn-secondary">Contact Me</a>
                     </div>
                 </div>
 
@@ -89,17 +70,10 @@ const Hero = () => {
                 >
                     {/* 3D Code Block */}
                     <motion.div
+                        className="hero-code-card"
                         style={{
                             rotateX,
                             rotateY,
-                            background: 'rgba(22, 27, 34, 0.8)',
-                            padding: '2.5rem',
-                            borderRadius: '20px',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            fontFamily: 'monospace',
-                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
-                            maxWidth: '100%',
-                            overflow: 'hidden'
                         }}
                     >
                         <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
@@ -107,12 +81,12 @@ const Hero = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
                         </div>
-                        <code style={{ color: '#e6edf3', display: 'block', fontSize: 'clamp(0.8rem, 2vw, 1rem)' }}>
-                            <span style={{ color: '#ff7b72' }}>const</span> <span style={{ color: '#d2a8ff' }}>developer</span> = &#123;<br />
-                            &nbsp;&nbsp;name: <span style={{ color: '#a5d6ff' }}>"Siddharth"</span>,<br />
-                            &nbsp;&nbsp;role: <span style={{ color: '#a5d6ff' }}>"Senior Engineer"</span>,<br />
-                            &nbsp;&nbsp;stack: [<span style={{ color: '#a5d6ff' }}>"React"</span>, <span style={{ color: '#a5d6ff' }}>"Azure"</span>],<br />
-                            &nbsp;&nbsp;mission: <span style={{ color: '#a5d6ff' }}>"Build the Future"</span><br />
+                        <code className="code-content">
+                            <span className="token-keyword">const</span> <span className="token-entity">developer</span> = &#123;<br />
+                            &nbsp;&nbsp;name: <span className="token-string">"Siddharth"</span>,<br />
+                            &nbsp;&nbsp;role: <span className="token-string">"Senior Engineer"</span>,<br />
+                            &nbsp;&nbsp;stack: [<span className="token-string">"React"</span>, <span className="token-string">"Azure"</span>],<br />
+                            &nbsp;&nbsp;mission: <span className="token-string">"Build the Future"</span><br />
                             &#125;;
                         </code>
                     </motion.div>

@@ -8,12 +8,29 @@
     --accent-pink: #ff34b3;
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+[data-theme='light'] {
+    --bg-color: #f0f2f5;
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --accent-cyan: #00bcd4;
+    /* Darker cyan for light mode contrast */
+    --accent-purple: #7c4dff;
+    --accent-pink: #e91e63;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +40,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Gradient Mesh Background */
@@ -174,6 +192,140 @@ section {
         /* Side by side on desktop */
     }
 }
+
+/* HERO BUTTONS */
+.hero-btn-primary {
+    background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 255, 242, 0.3);
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Light Mode Hero Buttons */
+[data-theme='light'] .hero-btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    /* Darker tint for light mode */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* Visible border */
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* HERO CODE CARD */
+.hero-code-card {
+    background: rgba(22, 27, 34, 0.8);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: monospace;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.code-content {
+    color: #e6edf3;
+    display: block;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.token-keyword {
+    color: #ff7b72;
+}
+
+.token-entity {
+    color: #d2a8ff;
+}
+
+.token-string {
+    color: #a5d6ff;
+}
+
+/* Light Mode Code Card */
+[data-theme='light'] .hero-code-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .code-content {
+    color: #24292f;
+}
+
+[data-theme='light'] .token-keyword {
+    color: #d73a49;
+}
+
+/* Red */
+[data-theme='light'] .token-entity {
+    color: #6f42c1;
+}
+
+/* Purple */
+/* CONTACT FORM */
+.contact-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 255, 242, 0.2);
+}
+
+[data-theme='light'] .contact-input {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #1f2937;
+}
+
+[data-theme='light'] .contact-input:focus {
+    border-color: var(--accent-cyan);
+    background: white;
+}
+
+[data-theme='light'] .token-string {
+    color: #032f62;
+}
+
+/* Dark Blue */
 
 /* BENTO ITEM SPANS */
 .bento-item {
