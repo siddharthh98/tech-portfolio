@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Using relative path for better compatibility
+  base: '/tech-portfolio/', // Absolute path is safer for subdirectories
 })
