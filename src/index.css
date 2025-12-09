@@ -98,41 +98,63 @@ section {
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
+    /* Ensure vertical alignment */
 }
 
-/* Mobile Nav: Simple horizontal scroll or sticky bottom could work, 
-   but for now, let's hide non-essential links or just scale it down */
+.nav-btn {
+    border: 1px solid var(--accent-cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: var(--accent-cyan);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 255, 242, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 242, 0.3);
+}
+
+/* Mobile Nav */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide menu on mobile for now, replaced by simple functional layout later if needed, 
-                          OR better: make it a fixed bottom bar or hamburger. 
-                          For "orientation not good", hiding is a quick safety, but let's try a smaller row. */
-        gap: 1rem;
-        font-size: 0.9rem;
+        display: flex;
+        gap: 0.8rem;
+        /* Reduced gap */
+        font-size: 0.85rem;
+        /* Slightly smaller text */
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background: rgba(22, 27, 34, 0.95);
-        backdrop-filter: blur(10px);
+        background: rgba(22, 27, 34, 0.98);
+        /* Higher opacity for readability */
+        backdrop-filter: blur(15px);
         justify-content: center;
-        padding: 1rem;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 0.8rem 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 1000;
-        top: auto; /* Override top fixed */
+        top: auto;
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        overflow-x: auto;
+        /* Allow scrolling if it really overflows */
     }
-    
-    /* Show "Contact" specifically? Or just show all? 
-       Let's actually NOT hide it, but move it to bottom on mobile for better thumb reach/visibility 
-       without taking top space */
-    .nav-links {
-        display: flex;
+
+    .nav-btn {
+        border: none;
+        /* Remove border on mobile to save space */
+        padding: 0;
+        /* Remove padding */
+        color: var(--accent-cyan);
+        /* Keep accent color */
     }
 }
 
 /* HERO */
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    /* Responsive font size */
     margin: 0.5rem 0;
     line-height: 1.1;
 }
@@ -142,21 +164,29 @@ section {
     align-items: center;
     gap: 4rem;
     flex-wrap: wrap;
-    flex-direction: column-reverse; /* Stack with visual on top or text on top? usually Text top on mobile */
+    flex-direction: column-reverse;
+    /* Stack with visual on top or text on top? usually Text top on mobile */
 }
 
 @media (min-width: 768px) {
     .hero-container {
-        flex-direction: row; /* Side by side on desktop */
+        flex-direction: row;
+        /* Side by side on desktop */
     }
 }
 
 /* BENTO ITEM SPANS */
 .bento-item {
-    grid-column: span 1; /* Default mobile: 1 column */
+    grid-column: span 1;
+    /* Default mobile: 1 column */
 }
 
 @media (min-width: 768px) {
-    .span-2 { grid-column: span 2; }
-    .span-3 { grid-column: span 3; }
+    .span-2 {
+        grid-column: span 2;
+    }
+
+    .span-3 {
+        grid-column: span 3;
+    }
 }

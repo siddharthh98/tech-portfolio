@@ -20,12 +20,7 @@ const Navbar = () => {
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li>
-                        <a href="#contact" style={{
-                            border: '1px solid var(--accent-color)',
-                            padding: '0.5rem 1rem',
-                            borderRadius: '5px',
-                            color: 'var(--accent-color)'
-                        }}>Contact Me</a>
+                        <a href="#contact" className="nav-btn">Contact Me</a>
                     </li>
                 </ul>
             </div>
