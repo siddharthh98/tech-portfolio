@@ -27,6 +27,20 @@ const Contact = () => {
                     }}>
                         Say Hello
                     </a>
+                    <a href="https://www.linkedin.com/in/siddharth-singh-gaur-81aa51114/" target="_blank" rel="noreferrer" className="btn-secondary" style={{
+                        fontSize: '1.2rem',
+                        padding: '1rem 2rem',
+                        marginLeft: '1rem',
+                        border: '1px solid var(--text-secondary)',
+                        borderRadius: '5px',
+                        color: 'var(--text-primary)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        textDecoration: 'none'
+                    }}>
+                        <i className="fab fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
                 <footer style={{ marginTop: '5rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                     <p>Designed & Built by Siddharth Singh Gaur</p>
