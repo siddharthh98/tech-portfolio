@@ -85,7 +85,7 @@ const Hero = () => {
                             <span className="token-keyword">const</span> <span className="token-entity">developer</span> = &#123;<br />
                             &nbsp;&nbsp;name: <span className="token-string">"Siddharth"</span>,<br />
                             &nbsp;&nbsp;role: <span className="token-string">"Senior Engineer"</span>,<br />
-                            &nbsp;&nbsp;stack: [<span className="token-string">"React"</span>, <span className="token-string">"Azure"</span>],<br />
+                            &nbsp;&nbsp;stack: [<span className="token-string">"Java"</span>, <span className="token-string">"C#"</span>, <span className="token-string">"AWS"</span>, <span className="token-string">"Azure"</span>],<br />
                             &nbsp;&nbsp;mission: <span className="token-string">"Build the Future"</span><br />
                             &#125;;
                         </code>
