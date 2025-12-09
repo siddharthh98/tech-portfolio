@@ -1,0 +1,119 @@
+import React, { useState, useEffect } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+
+const Hero = () => {
+    const [text, setText] = useState('');
+    const fullText = "Senior Software Engineer";
+
+    // Typewriter effect
+    useEffect(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+            setText(fullText.substring(0, i));
+            i++;
+            if (i > fullText.length) clearInterval(interval);
+        }, 100);
+        return () => clearInterval(interval);
+    }, []);
+
+    // 3D Tilt Effect
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useTransform(y, [-100, 100], [10, -10]);
+    const rotateY = useTransform(x, [-100, 100], [-10, 10]);
+
+    const handleMouseMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct * 200);
+        y.set(yPct * 200);
+    };
+
+    return (
+        <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
+            <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1 }}>
+                    <motion.span
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                        style={{
+                            background: 'linear-gradient(to right, #00fff2, #bd34fe)',
+                            webkitBackgroundClip: 'text',
+                            color: 'transparent',
+                            fontSize: '1.2rem', fontWeight: 'bold'
+                        }}
+                    >
+                        Hello, I'm
+                    </motion.span>
+                    <h1 style={{ fontSize: '4rem', margin: '0.5rem 0', lineHeight: 1.1 }}>
+                        Siddharth Singh Gaur
+                    </h1>
+                    <h2 style={{ fontSize: '2rem', color: '#8b949e', height: '2.5rem', marginBottom: '1.5rem' }}>
+                        {text}<span style={{ animation: 'blink 1s infinite' }}>|</span>
+                    </h2>
+                    <p style={{ color: '#8b949e', maxWidth: '600px', marginBottom: '2.5rem', fontSize: '1.1rem' }}>
+                        Designing and delivering innovative solutions, from the core runtime engine for the <strong>Multimodal Workstream</strong> to the proprietary <strong>OBO Connector</strong>. Passionate about enhancing security, user experience, and advancing technology at scale.
+                    </p>
+                    <div style={{ display: 'flex', gap: '1rem' }}>
+                        <a href="#projects" style={{
+                            background: 'linear-gradient(45deg, #00fff2, #bd34fe)',
+                            padding: '0.8rem 1.8rem',
+                            borderRadius: '50px',
+                            color: '#000',
+                            fontWeight: 'bold',
+                            border: 'none'
+                        }}>View Work</a>
+                        <a href="#contact" style={{
+                            background: 'rgba(255,255,255,0.1)',
+                            padding: '0.8rem 1.8rem',
+                            borderRadius: '50px',
+                            backdropFilter: 'blur(10px)',
+                            border: '1px solid rgba(255,255,255,0.1)'
+                        }}>Contact Me</a>
+                    </div>
+                </div>
+
+                <div
+                    style={{ flex: 1, display: 'flex', justifyContent: 'center', perspective: 1000 }}
+                    onMouseMove={handleMouseMove}
+                >
+                    <motion.div
+                        style={{
+                            rotateX,
+                            rotateY,
+                            background: 'rgba(22, 27, 34, 0.8)',
+                            padding: '2.5rem',
+                            borderRadius: '20px',
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            fontFamily: 'monospace',
+                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
+                        }}
+                    >
+                        <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }}></div>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
+                        </div>
+                        <code style={{ color: '#e6edf3', display: 'block' }}>
+                            <span style={{ color: '#ff7b72' }}>const</span> <span style={{ color: '#d2a8ff' }}>developer</span> = &#123;<br />
+                            &nbsp;&nbsp;name: <span style={{ color: '#a5d6ff' }}>"Siddharth"</span>,<br />
+                            &nbsp;&nbsp;role: <span style={{ color: '#a5d6ff' }}>"Senior Engineer"</span>,<br />
+                            &nbsp;&nbsp;stack: [<span style={{ color: '#a5d6ff' }}>"React"</span>, <span style={{ color: '#a5d6ff' }}>"Azure"</span>],<br />
+                            &nbsp;&nbsp;mission: <span style={{ color: '#a5d6ff' }}>"Build the Future"</span><br />
+                            &#125;;
+                        </code>
+                    </motion.div>
+                </div>
+            </div>
+            <style>{`
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      `}</style>
+        </section>
+    );
+};
+
+export default Hero;
