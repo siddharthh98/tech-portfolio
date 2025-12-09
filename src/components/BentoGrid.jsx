@@ -21,16 +21,11 @@ export const BentoItem = ({ children, className = "", span = 1 }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`glass-card ${className}`}
+            className={`glass-card bento-item ${span > 1 ? `span-${span}` : ''} ${className}`}
             style={{
                 borderRadius: '20px',
                 padding: '1.5rem',
-                gridColumn: `span ${span}`,
-                // Mobile fallback
-                gridColumnEnd: 'span 1',
-                '@media (min-width: 768px)': {
-                    gridColumnEnd: `span ${span}`
-                },
+                // gridColumn logic successfully moved to CSS for responsiveness
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column'

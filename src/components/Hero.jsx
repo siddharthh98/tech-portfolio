@@ -36,8 +36,8 @@ const Hero = () => {
 
     return (
         <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
-            <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}>
-                <div style={{ flex: 1 }}>
+            <div className="container hero-container">
+                <div style={{ flex: 1, width: '100%' }}>
                     <motion.span
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         style={{
@@ -49,38 +49,45 @@ const Hero = () => {
                     >
                         Hello, I'm
                     </motion.span>
-                    <h1 style={{ fontSize: '4rem', margin: '0.5rem 0', lineHeight: 1.1 }}>
+                    <h1 className="hero-title">
                         Siddharth Singh Gaur
                     </h1>
-                    <h2 style={{ fontSize: '2rem', color: '#8b949e', height: '2.5rem', marginBottom: '1.5rem' }}>
+                    <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: '#8b949e', height: 'auto', minHeight: '2.5rem', marginBottom: '1.5rem' }}>
                         {text}<span style={{ animation: 'blink 1s infinite' }}>|</span>
                     </h2>
                     <p style={{ color: '#8b949e', maxWidth: '600px', marginBottom: '2.5rem', fontSize: '1.1rem' }}>
                         Designing and delivering innovative solutions, from the core runtime engine for the <strong>Multimodal Workstream</strong> to the proprietary <strong>OBO Connector</strong>. Passionate about enhancing security, user experience, and advancing technology at scale.
                     </p>
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                         <a href="#projects" style={{
                             background: 'linear-gradient(45deg, #00fff2, #bd34fe)',
                             padding: '0.8rem 1.8rem',
                             borderRadius: '50px',
                             color: '#000',
                             fontWeight: 'bold',
-                            border: 'none'
+                            border: 'none',
+                            textAlign: 'center',
+                            flex: 1,
+                            minWidth: '140px'
                         }}>View Work</a>
                         <a href="#contact" style={{
                             background: 'rgba(255,255,255,0.1)',
                             padding: '0.8rem 1.8rem',
                             borderRadius: '50px',
                             backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)'
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            textAlign: 'center',
+                            flex: 1,
+                            minWidth: '140px'
                         }}>Contact Me</a>
                     </div>
                 </div>
 
                 <div
-                    style={{ flex: 1, display: 'flex', justifyContent: 'center', perspective: 1000 }}
+                    style={{ flex: 1, display: 'flex', justifyContent: 'center', perspective: 1000, width: '100%' }}
                     onMouseMove={handleMouseMove}
                 >
+                    {/* 3D Code Block */}
                     <motion.div
                         style={{
                             rotateX,
@@ -90,7 +97,9 @@ const Hero = () => {
                             borderRadius: '20px',
                             border: '1px solid rgba(255,255,255,0.1)',
                             fontFamily: 'monospace',
-                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)'
+                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
+                            maxWidth: '100%',
+                            overflow: 'hidden'
                         }}
                     >
                         <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
@@ -98,7 +107,7 @@ const Hero = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
                         </div>
-                        <code style={{ color: '#e6edf3', display: 'block' }}>
+                        <code style={{ color: '#e6edf3', display: 'block', fontSize: 'clamp(0.8rem, 2vw, 1rem)' }}>
                             <span style={{ color: '#ff7b72' }}>const</span> <span style={{ color: '#d2a8ff' }}>developer</span> = &#123;<br />
                             &nbsp;&nbsp;name: <span style={{ color: '#a5d6ff' }}>"Siddharth"</span>,<br />
                             &nbsp;&nbsp;role: <span style={{ color: '#a5d6ff' }}>"Senior Engineer"</span>,<br />

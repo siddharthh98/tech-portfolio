@@ -10,15 +10,11 @@ const Navbar = () => {
             zIndex: 1000,
             padding: '1rem 0'
         }}>
-            <div className="container" style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
+            <div className="container nav-container">
                 <a href="#" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
                     Siddharth<span className="accent">.</span>
                 </a>
-                <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none' }}>
+                <ul className="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
