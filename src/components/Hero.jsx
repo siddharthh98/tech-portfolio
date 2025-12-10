@@ -10,7 +10,7 @@ const Hero = () => {
     const fullCode = `const developer = {
   name: "Siddharth",
   role: "Senior Engineer",
-  stack: ["React", "Azure"],
+  stack: ["Java", "C#", "AWS", "Azure"],
   mission: "Build the Future"
 };`;
 
@@ -32,7 +32,7 @@ const Hero = () => {
             setCodeText(fullCode.substring(0, i));
             i++;
             if (i > fullCode.length) clearInterval(interval);
-        }, 50); // Faster typing for code
+        }, 25); // Faster typing for code
         return () => clearInterval(interval);
     }, []);
 
@@ -79,7 +79,7 @@ const Hero = () => {
                         Architecting <strong>scalable microservices</strong> and <strong>AI-driven runtime engines</strong>. Specializing in secure enterprise integrations, high-performance cloud systems, and enhancing user experiences at scale.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <a href="#projects" className="hero-btn-primary">View Work</a>
+                        <a href="#experience" className="hero-btn-primary">View Work</a>
                         <a href="#contact" className="hero-btn-secondary">Contact Me</a>
                     </div>
                 </div>

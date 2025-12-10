@@ -50,9 +50,10 @@ const SpotlightCard = ({ children, className = "", span = 1 }) => {
                 overflow: 'hidden',
                 // Keep existing glass card styles, just adding spotlight overlay support
             }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+            }}
             transition={{ duration: 0.5 }}
         >
             <div
