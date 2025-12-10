@@ -1,17 +1,32 @@
 import React from 'react';
-import '../styles/Glass.css';
 import { motion } from 'framer-motion';
+import '../styles/Glass.css';
 
-export const BentoGrid = ({ children, className = "" }) => {
+export const BentoGrid = ({ children }) => {
     return (
-        <div className={`bento-grid ${className}`} style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.5rem',
-            width: '100%'
-        }}>
+        <motion.div
+            className="bento-grid"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                    opacity: 1,
+                    transition: {
+                        staggerChildren: 0.15
+                    }
+                }
+            }}
+            style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '1.5rem',
+                width: '100%'
+            }}
+        >
             {children}
-        </div>
+        </motion.div>
     );
 };
 

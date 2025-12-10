@@ -1,5 +1,6 @@
 import React from 'react';
-import { BentoGrid, BentoItem } from './BentoGrid';
+import { BentoGrid } from './BentoGrid';
+import SpotlightCard from './SpotlightCard';
 
 const experiences = [
     {
@@ -69,7 +70,7 @@ const Experience = () => {
                 </h2>
                 <BentoGrid>
                     {experiences.map((exp, index) => (
-                        <BentoItem key={index} span={exp.span}>
+                        <SpotlightCard key={index} span={exp.span}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
                                 <div>
                                     <h3 style={{ fontSize: '1.4rem' }}>{exp.role}</h3>
@@ -86,7 +87,7 @@ const Experience = () => {
                             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                                 {exp.desc}
                             </p>
-                        </BentoItem>
+                        </SpotlightCard>
                     ))}
                 </BentoGrid>
             </div>

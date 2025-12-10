@@ -5,7 +5,16 @@ const Hero = () => {
     const [text, setText] = useState('');
     const fullText = "Senior Software Engineer";
 
-    // Typewriter effect
+    // Code Typing Effect
+    const [codeText, setCodeText] = useState('');
+    const fullCode = `const developer = {
+  name: "Siddharth",
+  role: "Senior Engineer",
+  stack: ["React", "Azure"],
+  mission: "Build the Future"
+};`;
+
+    // Typewriter effect (Hero Title)
     useEffect(() => {
         let i = 0;
         const interval = setInterval(() => {
@@ -13,6 +22,17 @@ const Hero = () => {
             i++;
             if (i > fullText.length) clearInterval(interval);
         }, 100);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Typewriter effect (Code Block)
+    useEffect(() => {
+        let i = 0;
+        const interval = setInterval(() => {
+            setCodeText(fullCode.substring(0, i));
+            i++;
+            if (i > fullCode.length) clearInterval(interval);
+        }, 50); // Faster typing for code
         return () => clearInterval(interval);
     }, []);
 
@@ -81,14 +101,10 @@ const Hero = () => {
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
                             <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
                         </div>
-                        <code className="code-content">
-                            <span className="token-keyword">const</span> <span className="token-entity">developer</span> = &#123;<br />
-                            &nbsp;&nbsp;name: <span className="token-string">"Siddharth"</span>,<br />
-                            &nbsp;&nbsp;role: <span className="token-string">"Senior Engineer"</span>,<br />
-                            &nbsp;&nbsp;stack: [<span className="token-string">"Java"</span>, <span className="token-string">"C#"</span>, <span className="token-string">"AWS"</span>, <span className="token-string">"Azure"</span>],<br />
-                            &nbsp;&nbsp;mission: <span className="token-string">"Build the Future"</span><br />
-                            &#125;;
-                        </code>
+                        <pre className="code-content" style={{ margin: 0, whiteSpace: 'pre-wrap' }}>
+                            {codeText}
+                            <span className="cursor-blink">|</span>
+                        </pre>
                     </motion.div>
                 </div>
             </div>

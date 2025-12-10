@@ -1,5 +1,6 @@
 import React from 'react';
-import { BentoGrid, BentoItem } from './BentoGrid';
+import { BentoGrid } from './BentoGrid';
+import SpotlightCard from './SpotlightCard';
 
 const projects = [
     {
@@ -32,7 +33,7 @@ const Projects = () => {
                 </h2>
                 <BentoGrid>
                     {projects.map((project, index) => (
-                        <BentoItem key={index} span={project.span}>
+                        <SpotlightCard key={index} span={project.span}>
                             <div style={{ marginBottom: 'auto' }}>
                                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{project.title}</h3>
                                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
@@ -61,7 +62,7 @@ const Projects = () => {
                                     View Code <i className="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             )}
-                        </BentoItem>
+                        </SpotlightCard>
                     ))}
                 </BentoGrid>
             </div>

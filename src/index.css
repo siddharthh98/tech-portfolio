@@ -348,3 +348,30 @@ section {
         grid-column: span 3;
     }
 }
+
+/* Cursor Blink */
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    color: var(--accent-cyan);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* SPOTLIGHT */
+.spotlight-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
