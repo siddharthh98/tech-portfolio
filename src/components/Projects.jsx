@@ -5,20 +5,20 @@ const projects = [
     {
         title: "Quippler",
         tech: ["ReactJS", "Firebase"],
-        desc: "Chrome extension to track highlighted quotes (200 words max) with auto-email notifications.",
+        desc: "Productivity-focused Chrome extension for knowledge retention, featuring quote tracking and automated email digests.",
         link: "https://github.com/siddharthh98/quippler",
         span: 2
     },
     {
         title: "Image Forensics",
         tech: ["Matlab", "Signal Processing"],
-        desc: "Copy-move forgery detection algorithm using local binary patterns.",
+        desc: "Novel algorithm for Digital Image Forensics, detecting copy-move forgery with high accuracy using Local Binary Patterns.",
         span: 1
     },
     {
         title: "Portfolio V2",
         tech: ["React", "Vite", "Framer"],
-        desc: "The current portfolio site featuring cosmic bento design and gradient meshes.",
+        desc: "Modern developer portfolio built with React & Vite, showcasing advanced 3D animations, glassmorphism, and responsive design.",
         span: 1
     }
 ];

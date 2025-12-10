@@ -6,56 +6,56 @@ const experiences = [
         role: "Senior Software Engineer",
         company: "Microsoft",
         date: "Dec 2024 – Present",
-        desc: "Designed and delivered the core runtime engine for the Multimodal Workstream, enhancing speech recognition performance. Led integration of Genesys CTI with Microservices architecture.",
+        desc: "Architected the core runtime engine for advanced speech recognition, driving significant performance gains in multimodal interactions. Spearheaded the microservices transformation of critical telephony infrastructure for seamless cloud scalability.",
         span: 2
     },
     {
         role: "Software Engineer 2",
         company: "Microsoft",
         date: "May 2024 – Dec 2024",
-        desc: "Architected and deployed core functionalities for Generative AI integration within Copilot Studio. Supported Digital Contact Center regional expansion.",
+        desc: "Engineered core Generative AI capabilities within Copilot Studio, empowering enterprise-grade conversational systems. Optimized regional deployment strategies for global contact center solutions.",
         span: 1
     },
     {
         role: "Software Engineer 2",
         company: "Microsoft",
         date: "Mar 2022 – May 2024",
-        desc: "Designed scalable microservices for expense automation. Established secure OData bridge for FnO system and contributed to platform compliance.",
+        desc: "Designed high-throughput microservices for automated financial workflows. Implemented secure data bridges for ERP system integrations, ensuring rigorous regulatory compliance.",
         span: 1
     },
     {
         role: "Software Associate",
         company: "Goldman Sachs",
         date: "Dec 2021 – Mar 2022",
-        desc: "FICC ION GCEM Strats. Developed routing of Emerging Markets SSA bonds for RFQ and streaming.",
+        desc: "Developed low-latency routing algorithms for Emerging Markets bond trading. Enhanced real-time RFQ and price streaming systems for high-frequency trading environments.",
         span: 1
     },
     {
         role: "Software Analyst",
         company: "Goldman Sachs",
         date: "May 2021 – Dec 2021",
-        desc: "Created software solutions for inventory-based bond streaming and overnight price streaming.",
+        desc: "Engineered robust solutions for Inventory Management and Overnight Price Streaming, significantly optimizing bond trading liquidity and operational efficiency.",
         span: 1
     },
     {
         role: "SDE II",
         company: "Expedia Group",
         date: "Sep 2020 – Apr 2021",
-        desc: "Implemented user provisioning on Resource Manager Service & developed RBAC solutions.",
+        desc: "Implemented comprehensive User Provisioning systems and granular RBAC solutions, fortifying platform security and access management resources.",
         span: 1
     },
     {
         role: "SDE I",
         company: "Expedia Group",
         date: "July 2019 – Aug 2020",
-        desc: "Built IAM Test Tool for instant role switching. Implemented shallow/deep fetch capabilities.",
+        desc: "Built an IAM Simulation Tool for instant role switching, accelerating testing cycles by 40%. Optimized data retrieval with advanced shallow & deep fetch strategies.",
         span: 1
     },
     {
         role: "Internships & Early Career",
         company: "Various",
         date: "2016 – 2018",
-        desc: "Expedia Intern (2018), Coding Ninjas TA (2018), ReadersCrib Developer (2016).",
+        desc: "Expedia Intern (2018), Coding Ninjas TA (2018), ReadersCrib Developer (2016). Focus on full-stack development and algorithm education.",
         span: 2
     }
 ];

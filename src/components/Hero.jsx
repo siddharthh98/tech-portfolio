@@ -56,7 +56,7 @@ const Hero = () => {
                         {text}<span style={{ animation: 'blink 1s infinite' }}>|</span>
                     </h2>
                     <p style={{ color: '#8b949e', maxWidth: '600px', marginBottom: '2.5rem', fontSize: '1.1rem' }}>
-                        Designing and delivering innovative solutions, from the core runtime engine for the <strong>Multimodal Workstream</strong> to the proprietary <strong>OBO Connector</strong>. Passionate about enhancing security, user experience, and advancing technology at scale.
+                        Architecting <strong>scalable microservices</strong> and <strong>AI-driven runtime engines</strong>. Specializing in secure enterprise integrations, high-performance cloud systems, and enhancing user experiences at scale.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                         <a href="#projects" className="hero-btn-primary">View Work</a>
